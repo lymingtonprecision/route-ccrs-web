@@ -15,25 +15,18 @@
 
 (def env-keys-to-option-names
   {:db-name :database-name
-   :db-server :server-name
-   :db-user :username})
-
-(defn is-env-key? [k] (re-find #"(?i)^:?db-" (str k)))
-
-(defn strip-env-key [k]
-  (-> (str k)
-      (clojure.string/replace #"(?i)^:?db-" "")
-      keyword))
+   :db-host :server-name
+   :db-user :username
+   :db-password :password})
 
 (defn extract-options-from-env [env]
-  (->> env
-       (filter #(is-env-key? (first %)))
-       (reduce
-         (fn [opts [k v]]
-           (let [o (or (k env-keys-to-option-names)
-                       (strip-env-key k))]
-             (assoc opts o v)))
-         {})))
+  (reduce
+    (fn [opts [k v]]
+      (if-let [k (env-keys-to-option-names k)]
+        (assoc opts k v)
+        opts))
+    {}
+    env))
 
 (defn merge-options-with-env [env]
   (merge default-options (extract-options-from-env env)))

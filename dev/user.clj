@@ -6,7 +6,7 @@
             [route-ccrs-web.system :as sys]))
 
 (def default-env
-  {:db-server "neon"
+  {:db-host "neon"
    :db-name "IFST"})
 
 (def env (atom {}))
