@@ -9,6 +9,7 @@
             [ring.middleware.transit :as mwtr]
 
             [route-ccrs-web.api.routes]
+            [route-ccrs-web.api.access-control :refer [wrap-allow-origin]]
             [route-ccrs-web.transit.handlers :as trh]))
 
 (defn wrap-keywordize-params [handler]
@@ -22,7 +23,8 @@
         {:opts {:handlers trh/read-handlers}})
       params/wrap-params
       (mwtr/wrap-transit-response
-        {:encoding :json :opts {:handlers trh/write-handlers}})))
+        {:encoding :json :opts {:handlers trh/write-handlers}})
+      wrap-allow-origin))
 
 (defrecord ApiHandler [part-store date-calculator]
   component/Lifecycle
