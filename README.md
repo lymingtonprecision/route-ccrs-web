@@ -36,8 +36,8 @@ details.
 
 Make a `GET` request for a part to:
 
-    ; <route-ccrs-web>/part/<part-number>
-    localhost:8080/part/100105001R03
+    ; <route-ccrs-web>/parts/<part-number>
+    localhost:8080/parts/100105001R03
 
 This will return a [JSON formatted Transit](http://transit-format.org/)
 part structure, populated with the current end dates and CCRs. (To
