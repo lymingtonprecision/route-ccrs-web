@@ -7,10 +7,10 @@
 (def write-handlers
   {org.joda.time.LocalDate
    (tr/write-handler
-     (fn [d] "org.joda.time.LocalDate")
+     (fn [d] "Date")
      (fn [d] (tf/unparse-local-date date-formatter d)))})
 
 (def read-handlers
-  {"org.joda.time.LocalDate"
+  {"Date"
    (tr/read-handler
      (fn [d] (tf/parse-local-date d)))})
