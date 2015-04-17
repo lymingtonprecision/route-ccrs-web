@@ -1,6 +1,6 @@
-(defproject route-ccrs-web "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+(defproject route-ccrs-web "1.0.0"
+  :description "A HTTP service exposing the Route CCR calculation"
+  :url "https://github.com/lymingtonprecision/route-ccrs-web"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.6.0"]
@@ -33,7 +33,7 @@
   :main route-ccrs-web.main
 
   :profiles {:dev {:dependencies [[org.clojure/tools.namespace "0.2.10"]]}
-             :uberjar {:aot [route-ccrs.main]}
+             :uberjar {:aot [route-ccrs-web.main]}
              :repl {:source-paths ["dev" "src"]}}
 
   :repl-options {:init-ns user
