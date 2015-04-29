@@ -5,7 +5,10 @@
 (defrecord Server [env api-handler]
   component/Lifecycle
   (start [this]
-    (let [s (run-server (:f api-handler) {:port (get env :port 0)})]
+    (let [port (if-let [pn (get env :port)]
+                 (java.lang.Integer/parseInt pn)
+                 0)
+          s (run-server (:f api-handler) {:port port})]
       (assoc this :instance s :port (:local-port (meta s)))))
   (stop [this]
     (if-let [s (:instance this)]
