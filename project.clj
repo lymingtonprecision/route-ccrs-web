@@ -1,4 +1,4 @@
-(defproject route-ccrs-web "1.0.0"
+(defproject route-ccrs-web "1.0.1"
   :description "A HTTP service exposing the Route CCR calculation"
   :url "https://github.com/lymingtonprecision/route-ccrs-web"
   :license {:name "Eclipse Public License"
@@ -21,14 +21,15 @@
 
                  ; web
                  [http-kit "2.1.19"]
-                 [ring/ring-core "1.0.0-RC1"]
+                 [ring/ring-core "1.3.2"
+                  :exclusions [clj-time]]
                  [prismatic/fnhouse "0.1.1"]
                  [com.cognitect/transit-clj "0.8.271"]
                  [ring-transit "0.1.3"]
 
                  ; data processing
-                 [prismatic/schema "0.4.0"]
-                 [lymingtonprecision/route-ccrs "3.0.0"]]
+                 [prismatic/schema "0.4.1"]
+                 [lymingtonprecision/route-ccrs "3.0.1"]]
 
   :main route-ccrs-web.main
 
