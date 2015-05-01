@@ -1,9 +1,9 @@
-(defproject route-ccrs-web "1.0.1"
+(defproject route-ccrs-web "1.1.0-SNAPSHOT"
   :description "A HTTP service exposing the Route CCR calculation"
   :url "https://github.com/lymingtonprecision/route-ccrs-web"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.6.0"]
+  :dependencies [[org.clojure/clojure "1.7.0-beta2"]
 
                  ; components/system
                  [com.stuartsierra/component "0.2.3"]
@@ -28,8 +28,8 @@
                  [ring-transit "0.1.3"]
 
                  ; data processing
-                 [prismatic/schema "0.4.1"]
-                 [lymingtonprecision/route-ccrs "3.0.1"]]
+                 [prismatic/schema "0.4.2"]
+                 [lymingtonprecision/route-ccrs "3.1.0-SNAPSHOT"]]
 
   :main route-ccrs-web.main
 
