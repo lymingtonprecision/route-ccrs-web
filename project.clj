@@ -29,7 +29,7 @@
 
                  ; data processing
                  [prismatic/schema "0.4.2"]
-                 [lymingtonprecision/route-ccrs "3.1.0-SNAPSHOT"]]
+                 [lymingtonprecision/route-ccrs "3.2.0"]]
 
   :main route-ccrs-web.main
 
