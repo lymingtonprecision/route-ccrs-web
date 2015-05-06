@@ -44,6 +44,11 @@ part structure, populated with the current end dates and CCRs. (To
 retrieve the part _without_ end dates add `?with-end-dates=false`
 to the request URL.)
 
+If the requested part does not exist a `404` response will be
+returned. If the part exists but does not conform to the required
+schema then a `500` response will be returned with the schema
+validation error details in the body (as JSON formatted Transit.)
+
 To refresh the end dates for a part structure, after adding some
 `:source` entries for example, `POST` the part structure—again in JSON
 encoded Transit format—back to the server at:
