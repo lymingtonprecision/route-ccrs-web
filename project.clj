@@ -1,4 +1,4 @@
-(defproject route-ccrs-web "1.2.1-SNAPSHOT"
+(defproject route-ccrs-web "1.3.0"
   :description "A HTTP service exposing the Route CCR calculation"
   :url "https://github.com/lymingtonprecision/route-ccrs-web"
   :license {:name "Eclipse Public License"
